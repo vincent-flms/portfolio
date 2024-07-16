@@ -99,7 +99,7 @@ const App: React.FC = () => {
 
       <Box mt={2}>
         <Routes>
-          <Route path="/" element={<Navigate replace to="/portfolio" />} />
+          <Route path="/"/>
           <Route path="/portfolio" element={<Home />} />
           <Route path="/project/warnitapp" element={<Warnitapp />} />
           <Route path="/project/warnit" element={<Warnit />} />
