@@ -92,7 +92,7 @@ const App: React.FC = () => {
             <MenuItem onClick={handleClose} component={Link} to="/project/formaculture">Formaculture</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/project/conceptwb">Conception Weight and Balance</MenuItem>
           </Menu>
-          <Button color="inherit" component={Link} to="/parcour">Parcour</Button>
+          <Button color="inherit" component={Link} to="/parcour">Parcours</Button>
           <Button color="inherit" component={Link} to="/contact">Contact</Button>
         </Toolbar>
       </AppBar>
