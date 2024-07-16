@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Menu, MenuItem, Button, Box } from '@mui/material';
 
 import Agilitskill from './container/skillpage/agilitskill';
@@ -42,13 +42,13 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <AppBar position="static" style={{padding: '1%'}}>
+      <AppBar position="static" style={{ padding: '1%' }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             <div>
               Vincent Ducournau
             </div>
-            <div style={{marginLeft: 20, fontSize: 16}}>
+            <div style={{ marginLeft: 20, fontSize: 16 }}>
               25 ans
             </div>
           </Typography>
@@ -99,6 +99,7 @@ const App: React.FC = () => {
 
       <Box mt={2}>
         <Routes>
+          <Route path="/" element={<Navigate replace to="/portfolio" />} />
           <Route path="/portfolio" element={<Home />} />
           <Route path="/project/warnitapp" element={<Warnitapp />} />
           <Route path="/project/warnit" element={<Warnit />} />
@@ -115,12 +116,12 @@ const App: React.FC = () => {
           <Route path="/skill/sql" element={<Sqlskill />} />
           <Route path="/skill/typescript" element={<Typescriptskill />} />
           <Route path="/skill/conceptuml" element={<Umlconceptskill />} />
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/parcour" element={<Parcour/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/parcour" element={<Parcour />} />
         </Routes>
       </Box>
     </Router>
   );
-}
+};
 
 export default App;
