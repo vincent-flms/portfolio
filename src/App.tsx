@@ -99,7 +99,7 @@ const App: React.FC = () => {
 
       <Box mt={2}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Home />} />
           <Route path="/project/warnitapp" element={<Warnitapp />} />
           <Route path="/project/warnit" element={<Warnit />} />
           <Route path="/project/projectui" element={<Projectuiagenda />} />
