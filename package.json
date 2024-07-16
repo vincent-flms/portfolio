@@ -2,7 +2,7 @@
   "name": "webpresentation",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://vincent-flms.github.io/portfolio",
+  "homepage" : "https://vincent-flms.github.io/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
