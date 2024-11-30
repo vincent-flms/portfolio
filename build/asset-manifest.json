@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.e6c13ad2.css",
+    "main.js": "/portfolio/static/js/main.93d295f4.js",
+    "static/js/453.02a82f56.chunk.js": "/portfolio/static/js/453.02a82f56.chunk.js",
+    "static/media/logoMain.png": "/portfolio/static/media/logoMain.0150e63e91b6706f3cdd.png",
+    "static/media/FrontW&b.svg": "/portfolio/static/media/FrontW&b.152287a20804a5f46585aab27d481dec.svg",
+    "static/media/LettreDeVol.svg": "/portfolio/static/media/LettreDeVol.b5dd8903e818cf943fe16595baaa12d3.svg",
+    "static/media/warnitApp.svg": "/portfolio/static/media/warnitApp.c16fbf32464646ccd80382ab9878d6c2.svg",
+    "static/media/imagePerso.jpg": "/portfolio/static/media/imagePerso.292b6d3b8527ae462058.jpg",
+    "static/media/WarnitMenu.svg": "/portfolio/static/media/WarnitMenu.44b4eebb905b40e1d7fdaa303c5e1a73.svg",
+    "static/media/scheduleBlack.jpg": "/portfolio/static/media/scheduleBlack.2f27298cc001230b2e48.jpg",
+    "static/media/Warnit.svg": "/portfolio/static/media/Warnit.4b94604fae28b4f7b7ecaba58c510316.svg",
+    "static/media/calendarBlack.jpg": "/portfolio/static/media/calendarBlack.07efd5b3065b031c2658.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.e6c13ad2.css.map": "/portfolio/static/css/main.e6c13ad2.css.map",
+    "main.93d295f4.js.map": "/portfolio/static/js/main.93d295f4.js.map",
+    "453.02a82f56.chunk.js.map": "/portfolio/static/js/453.02a82f56.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.93d295f4.js"
+  ]
+}
