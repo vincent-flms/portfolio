@@ -1,13 +1,14 @@
 import { Box, Card, CardContent, Typography, Link, AppBar, Toolbar, IconButton, Button, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@mui/lab';
+import Footer from '../components/footer';
 
 const projects = [
     {
         title: "UI Agenda",
         description: "Développement d'une application mobile pour un agenda.",
         link: "/project/projectui",
-        date: "Février 2024"
+        date: "Septembre 2024"
     },
     {
         title: "Conception W&B",
@@ -86,7 +87,9 @@ const Parcour = () => {
                     </Timeline>
                 </Box>
             </Container>
+            <Footer />
         </Box>
+        
     );
 };
 

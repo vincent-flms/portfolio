@@ -3,10 +3,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import Footer from '../components/footer';
 import imagePerso from './../design/imagePerso.jpg';
+import { useEffect, useState } from 'react';
+
 const Contact = () => {
+    
     return (
-        <Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '55vh', padding: 2 }}>
+        <Box >
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 2,height : '70vh' }}>
                 <Card sx={{ display: 'flex', padding: 2, width: '50%', minWidth: 300 }}>
                     <Avatar
                         alt="Vincent Ducournau"

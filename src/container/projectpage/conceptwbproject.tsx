@@ -1,7 +1,8 @@
 import { Box, Card, CardActionArea, CardContent, Divider, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 import Footer from "../../components/footer";
 import { useNavigate } from 'react-router-dom';
-
+import lettreVol from'./../../design/LettreDeVol.svg';
+import front from './../../design/FrontW&b.svg'
 const etapes = [
   {
     title: "Étude de l'existant",
@@ -105,57 +106,125 @@ const Conceptwbproject = () => {
 
   return (
     <Box>
-      <Box sx={{ padding: 2, marginLeft: '15%', marginRight: '15%' }}>
+      <Box sx={{ padding: 2, marginLeft: '25%', marginRight: '25%' }}>
 
-        <Typography variant="h3" gutterBottom sx={{ textAlign: 'center' }}>
-          Conception Weight and Balance (W&B)
+        <Typography variant="h2" gutterBottom sx={{ textAlign: 'center' }}>
+          Conception Weight and balance (W&B)
+        </Typography>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
+          L'équilibrage d'un point
         </Typography>
 
         <Divider sx={{ borderBottomWidth: 2, borderColor: 'lightGray' }} />
 
         <Typography variant="h6" sx={{ marginTop: '3%', marginBottom: '3%', position: 'relative' }}>
-          Objectifs
-          <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
-        </Typography>
-        <Typography paragraph>
-          L'objectif principal du projet de conception W&B était de permettre un développement efficace et de produire un logiciel final répondant aux attentes spécifiques de CYBERJET et de ses clients. Ce logiciel devait assurer une gestion précise et sécurisée du weight and balance, un ensemble de calculs critiques pour déterminer les paramètres de poids et de centre de gravité des aéronefs.
-        </Typography>
-
-        <Divider sx={{ borderBottomWidth: 1, borderColor: 'lightGray', width: '75%', margin: '5%', marginRight: 'auto', marginLeft: 'auto' }} />
-
-        <Typography variant="h6" sx={{ marginTop: '3%', marginBottom: '3%', position: 'relative' }}>
           Contexte
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Typography paragraph>
-          L'entreprise CYBERJET a sollicité la conception d'un nouveau projet informatique visant à développer un logiciel de gestion du weight and balance pour ses clients. Cette demande est née d'un besoin spécifique de l'un de leurs clients, qui nécessitait une solution logicielle pour automatiser et sécuriser les calculs liés au weight and balance. Ces calculs prennent en compte plusieurs paramètres de poids et des limites spécifiques à chaque appareil et à chaque vol.
+        <Typography paragraph style={{ marginLeft: '10%', marginRight: '10%' }}>
+          Le W&B est le nom d'un projet qui a vu le jour lors de mon arrivée chez Cyberjet,
+          une entreprise spécialisée dans l’édition de logiciels dédiés aux solutions de 
+          transport aérien.
+          <br />
+          <br />
+          L'entreprise CYBERJET a demandé la conception d'un projet informatique visant à développer un logiciel de gestion du
+          Weight and Balance pour ses clients. Cette demande répondait à un besoin spécifique de l'un de leurs clients, qui nécessitait une
+          solution logicielle capable d'automatiser et de sécuriser les calculs relatifs au Weight and Balance. Ces calculs prennent en compte divers
+          paramètres de poids ainsi que des limites propres à chaque appareil et vol.
+          <br />
+          <br />
+          Pour ce projet, j’ai été chargé de la conception, englobant plusieurs aspects tels que le choix des technologies, la modélisation de
+          l'application et la définition de ses fonctionnalités. L’objectif principal était de concevoir un logiciel capable de garantir la sécurité des poids
+          lors des vols tout en assurant la conformité aux régulations et aux normes de sécurité aérienne. Le projet devait aboutir à un produit final validé
+          par la DGAC (Direction Générale de l'Aviation Civile). Sans cette validation, le logiciel risquait d’être rejeté, 
+          ce qui aurait compromis la satisfaction du client ainsi que la réputation de CYBERJET.
+          <br />
+          <br />
+          Afin de m’assurer que le produit répondait aux exigences spécifiques, une équipe spécialisée me fournissait les informations nécessaires et 
+          validait les rendus de l'application à chaque étape. Le concept de Weight and Balance repose sur la notion de bras de levier : tout objet dans un avion, 
+          y compris l’avion lui-même, possède un centre de gravité. Ce point d’équilibre est modifié en fonction du poids des objets transportés. Pour éviter qu'un 
+          avion ne penche ou perde son équilibre, il est essentiel de calculer ces poids et de s’assurer qu’ils respectent les limites établies par les constructeurs.
+          <br />
+          <br />
+          <Typography gutterBottom sx={{ textAlign: 'center', border:'solid', paddingTop:'5px', paddingBottom: '5px', marginRight:'50px', marginLeft:'50px' }}>
+            I = W* (sta - Refsta)/C +K
+          </Typography>
+          <Typography variant="h6" gutterBottom sx={{ textAlign: 'center' }}>
+            Calcule d'un index
+          </Typography>
+          Afin d’expliquer le sujet sans entrer dans des détails trop techniques, je vais vous détailler
+          ce calcul évoqué précédemment. Le *W* représente le poids (*weight*) de chaque objet ou personne à bord de l’avion.
+          Le *sta* correspond à la station, c'est-à-dire l’emplacement de l’objet dans l’espace de l’avion. Le *Refsta*
+          signifie station de référence, qui indique le point d’équilibre de l’avion. Le *K* n’a pas de signification particulière,
+          c’est une valeur fixe. Enfin, le *C* sert à la conversion des unités.<br />
+          <br />
+          Toutes ces valeurs sont fournies par les fabricants et figurent sur les fiches techniques des avions. 
+          Une fois l’index de chaque élément calculé, nous effectuons un total qui est ensuite intégré dans une lettre de vol. 
+          Cette lettre de vol se présente sous la forme suivante :<br />
         </Typography>
+        <img src={lettreVol} alt="Presentation" style={{ width: '70%', height: 'auto', marginLeft: '15%', marginRight: '15%' }} />
+        <Typography variant="h6" gutterBottom sx={{ textAlign: 'center' }}>
+          Lettre de vol
+        </Typography>
+        <Typography paragraph style={{ marginLeft: '10%', marginRight: '10%' }}>
+          Pour expliquer le fonctionnement de la lettre de vol, il est essentiel que tous les points 
+          calculés pour chaque section respectent les limites définies pour ces sections. Par exemple, 
+          dans notre cas, le *zero fuel weight* ne correspond pas aux limites du *maximum zero fuel weight*. 
+          Cependant, le *landing weight* et le *take-off weight* respectent leurs limites. Cela signifie que 
+          l’avion ne pourra pas voler avec cette configuration, car il serait déséquilibré.<br />
+          <br />
+          Chaque section mentionnée correspond à un poids total selon une étape spécifique. Par exemple, 
+          le *zero fuel weight* représente le poids total de l’avion sans carburant ni cargo. Le *landing weight* 
+          inclut le poids de l’avion avec le carburant nécessaire pour atterrir. Enfin, le *take-off weight* correspond 
+          au poids total de l’avion, incluant le carburant et le cargo.<br />
+          <br />
+          Pour revenir à ce projet, il doit permettre le calcul de cette enveloppe, son affichage, et fournir la possibilité 
+          d’enregistrer et de signer cette enveloppe. Une signature du commandant de bord est également requise pour valider 
+          les données.
 
+        </Typography>
         <Divider sx={{ borderBottomWidth: 1, borderColor: 'lightGray', width: '75%', margin: '5%', marginRight: 'auto', marginLeft: 'auto' }} />
 
         <Typography variant="h6" sx={{ marginTop: '3%', marginBottom: '3%', position: 'relative' }}>
-          Enjeu
+          Mise en oeuvre
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Typography paragraph>
-          L'enjeu principal était de créer un logiciel qui sécurise les poids lors des vols, garantissant ainsi la conformité aux régulations et aux standards de sécurité aérienne. Le projet devait aboutir à un produit final validé par la DGAC (Direction Générale de l'Aviation Civile), sans quoi il risquait d'être rejeté, compromettant ainsi la satisfaction du client et la réputation de CYBERJET.
+        <Typography paragraph style={{ marginLeft: '10%', marginRight: '10%' }}>
+          Comme je l'ai précisé plus tôt, ce projet a été réalisé en totale autonomie et a suivi 
+          trois grandes phases. La première phase, une phase d'étude, a été menée en collaboration 
+          avec une autre équipe qui me fournissait des informations. Étant débutant dans le domaine de 
+          l'aéronautique, je n'avais pas les connaissances nécessaires pour réaliser ce projet. 
+          Durant cette phase, j'ai étudié de la documentation et analysé d'autres éléments tels que 
+          les applications d'autres entreprises pour mieux comprendre le design et les attentes de 
+          ce type d'application.<br />
+          <br />
+          Suite à cette étude, j'ai commencé à développer le design de mon application. À cette étape, 
+          j'ai utilisé Figma, un outil permettant de créer des maquettes avancées. Voici un exemple :
+          <br />
         </Typography>
-
-        <Divider sx={{ borderBottomWidth: 1, borderColor: 'lightGray', width: '75%', margin: '5%', marginRight: 'auto', marginLeft: 'auto' }} />
-
-        <Typography variant="h6" sx={{ marginTop: '3%', marginBottom: '3%', position: 'relative' }}>
-          Risques
-          <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
+        <img src={front} alt="Presentation" style={{ width: '70%', height: 'auto', marginLeft: '15%', marginRight: '15%' }} />
+        <Typography variant="h6" gutterBottom sx={{ textAlign: 'center' }}>
+          <a href="https://www.figma.com/proto/RvEbEknGpOhPqnAR0KoXkT/Cyberjet?node-id=374-9905&node-type=frame&t=k9Q7UCHftPZqShlr-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=374%3A9905">Maquette weight and balance</a>
         </Typography>
-        <Typography paragraph>
-          <List >
-            <ListItem>
-              <ListItemText primary=" > Les risques associés au projet incluaient la possibilité de refus par la DGAC en raison de documentation insuffisante ou de calculs erronés." />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary=" > D'autres risques comprenaient les défis techniques liés à l'intégration de nouvelles fonctionnalités, la compatibilité des technologies choisies et les délais de livraison stricts." />
-            </ListItem>
-          </List>
+        <Typography paragraph style={{ marginLeft: '10%', marginRight: '10%' }}>
+        <br/>
+          Pour cette étape, j'ai élaboré de nombreux designs que j'ai soumis à mon entreprise. 
+          Celui que je vous ai présenté ci-dessus est celui qui a été retenu. Cependant, 
+          il m'a fallu effectuer de nombreux tests avant de le proposer, car des éléments 
+          comme le choix de la technologie m'ont ralenti. Étant donné que l'entreprise ne 
+          fournissait pas de réponses rapides, j'ai passé beaucoup de temps à étudier différentes
+          options. Durant cette même étape, j'ai développé la base SQL nécessaire pour héberger 
+          mes données. Grâce aux études réalisées au préalable, cette partie n'a pas été 
+          particulièrement complexe, ce qui m'a permis de progresser efficacement sur le 
+          design tout en tenant compte des paramètres nécessaires aux calculs et à leur 
+          organisation.<br/>
+        </Typography>
+        <Typography paragraph style={{ marginLeft: '10%', marginRight: '10%' }}>
+          Enfin, pour cette dernière partie, j'ai principalement travaillé sur la documentation. 
+          Un document en particulier était essentiel : le document de spécifications techniques. 
+          Ce document regroupait toutes les fonctions nécessaires au développement de 
+          l'application, telles que le mode hors ligne, le rechargement, le changement de thème 
+          et les filtres.<br/> 
         </Typography>
 
         <Divider sx={{ borderBottomWidth: 1, borderColor: 'lightGray', width: '75%', margin: '5%', marginRight: 'auto', marginLeft: 'auto' }} />
@@ -165,7 +234,7 @@ const Conceptwbproject = () => {
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
         <Typography paragraph>
-          <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 }}>
+          <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2,marginLeft: '10%', marginRight: '10%' }}>
             {etapes.map((item, index) => (
               <Box
                 key={index}
@@ -207,9 +276,9 @@ const Conceptwbproject = () => {
           Acteurs
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 }}>
+        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2,marginLeft: '10%', marginRight: '10%' }}>
           {Acteurs.map((item, index) => (
-            <Box key={index} sx={{ flex: '0 0 auto', marginRight: 2 }}>
+            <Box key={index} sx={{ flex: '0 0 auto', marginRight: 2 ,}}>
               <Card sx={{ minWidth: 300, width: 300 }}>
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div">
@@ -230,7 +299,7 @@ const Conceptwbproject = () => {
           Résultats
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 }}>
+        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2,marginLeft: '10%', marginRight: '10%' }}>
           {Resultats.map((item, index) => (
             <Box key={index} sx={{ flex: '0 0 auto', marginRight: 2 }}>
               <Card sx={{ minWidth: 300, width: 300 }}>
@@ -253,7 +322,7 @@ const Conceptwbproject = () => {
           Lendemains du projet
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 }}>
+        <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 ,marginLeft: '10%', marginRight: '10%'}}>
           {Lendemains.map((item, index) => (
             <Box key={index} sx={{ flex: '0 0 auto', marginRight: 2 }}>
               <Card sx={{ minWidth: 300, width: 300 }}>
@@ -277,7 +346,7 @@ const Conceptwbproject = () => {
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
         <Typography paragraph>
-          <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2 }}>
+          <Box sx={{ display: 'flex', overflowX: 'auto', padding: 2,marginLeft: '10%', marginRight: '10%' }}>
             {skill.map((item, index) => (
               <Box
                 key={index}
@@ -294,7 +363,6 @@ const Conceptwbproject = () => {
                         variant="h6"
                         component="div"
                         sx={{
-                          transform: 'rotate(-45deg)',
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
@@ -316,10 +384,35 @@ const Conceptwbproject = () => {
           Mon regard critique
           <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
         </Typography>
-        <Typography paragraph sx={{ marginBottom: "5%" }}>
-          Ce projet m'a permis d'apporter une valeur ajoutée significative grâce à l'application de compétences techniques variées et à une gestion de projet rigoureuse. J'ai appris l'importance de l'analyse détaillée et de la planification minutieuse, ainsi que la nécessité d'une documentation complète pour assurer la conformité réglementaire. Les défis rencontrés m'ont aidé à renforcer mes capacités de résolution de problèmes et à adapter rapidement des solutions aux nouvelles exigences. Cette expérience m'a préparé à gérer des projets encore plus complexes à l'avenir, en mettant l'accent sur la qualité, la précision et la satisfaction des clients.
+        <Typography paragraph sx={{ marginBottom: "5%" ,marginLeft: '10%', marginRight: '10%'}}>
+          Ce projet m'a permis d'apporter une valeur ajoutée significative grâce à l'application de compétences techniques variées 
+          et à une gestion de projet rigoureuse. J'ai appris l'importance de l'analyse détaillée et de la planification minutieuse, 
+          ainsi que la nécessité d'une documentation complète pour assurer la conformité réglementaire. Les défis rencontrés m'ont 
+          aidé à renforcer mes capacités de résolution de problèmes et à adapter rapidement des solutions aux nouvelles exigences. 
+          Cette expérience m'a préparé à gérer des projets encore plus complexes à l'avenir, en mettant l'accent sur la qualité, 
+          la précision et la satisfaction des clients.
         </Typography>
 
+        <Divider sx={{ borderBottomWidth: 1, borderColor: 'lightGray', width: '75%', margin: '5%', marginRight: 'auto', marginLeft: 'auto' }} />
+
+        <Typography variant="h6" sx={{ marginTop: '3%', marginBottom: '3%', position: 'relative' }}>
+          Conclusion
+          <span style={{ position: 'absolute', bottom: '-5px', left: 0, width: '80%', height: '2px', backgroundColor: 'red' }} />
+        </Typography>
+        <Typography paragraph sx={{ marginBottom: "5%" ,marginLeft: '10%', marginRight: '10%'}}>
+        <br/>
+          Pour conclure, je vais développer les résultats obtenus après la conception de ce 
+          projet. Le projet en lui-même a été réalisé et le développement a été fait, mais 
+          le design de l'application n'a pas été retenu. Et pour cause, la technologie utilisée 
+          pour son développement était Swift. L'entreprise a donc préféré utiliser des layouts 
+          liés à cette technologie, sans avoir à en développer de nouveaux. Je suis assez déçu 
+          de ce principe, mais je comprends, puisque si nous étions partis sur mon design, il 
+          aurait fallu copier ce design sur chaque application liée à cette technologie. Mais 
+          malgré cela, je trouve que cette expérience fut très importante pour moi, tant sur 
+          le plan des connaissances techniques que sur celles de l'aéronautique, ce qui m'a 
+          permis d'avancer rapidement sur les autres projets que l'entreprise Cyberjet m'a 
+          confiés.<br/>
+        </Typography>
       </Box>
 
       <Footer />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Menu, MenuItem, Button, Box } from '@mui/material';
 
@@ -23,9 +23,16 @@ import Contact from './container/contact';
 import Parcour from './container/parcour';
 import Home from './container/home';
 
+import Competences from './container/Compétences';
+import Projets from './container/Projets';
 const App: React.FC = () => {
+
+  
   const [anchorElSkills, setAnchorElSkills] = useState<null | HTMLElement>(null);
   const [anchorElProjects, setAnchorElProjects] = useState<null | HTMLElement>(null);
+  const appBarRef = useRef<HTMLDivElement>(null);
+  const [appBarHeight, setAppBarHeight] = useState(0);
+
 
   const handleSkillsMenuClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElSkills(event.currentTarget);
@@ -40,22 +47,49 @@ const App: React.FC = () => {
     setAnchorElProjects(null);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    if (appBarRef.current) {
+      setAppBarHeight(appBarRef.current.offsetHeight);
+    }
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <Router>
-      <AppBar position="static" style={{ padding: '1%' }}>
+      <AppBar
+        ref={appBarRef}
+        position=  "fixed"
+        style={{
+          backgroundColor: isScrolled ? 'rgb(244, 244, 244)' : '#1976d2',
+          transition: 'background-color 0.3s',
+          padding: '1%'
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            <div>
+            <div style={{color: isScrolled ? 'black' : 'white'}}>
               Vincent Ducournau
             </div>
-            <div style={{ marginLeft: 20, fontSize: 16 }}>
+            <div style={{ marginLeft: 20, fontSize: 16 ,color: isScrolled ? 'black' : 'white'}}>
               25 ans
             </div>
           </Typography>
-          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/" style={{color: isScrolled ? 'black' : 'white'}}>Home</Button>
           <Button
             color="inherit"
             onClick={handleSkillsMenuClick}
+            style={{color: isScrolled ? 'black' : 'white'}}
           >
             Skills
           </Button>
@@ -78,6 +112,7 @@ const App: React.FC = () => {
           <Button
             color="inherit"
             onClick={handleProjectsMenuClick}
+            style={{color: isScrolled ? 'black' : 'white'}}
           >
             Projects
           </Button>
@@ -86,17 +121,17 @@ const App: React.FC = () => {
             open={Boolean(anchorElProjects)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose} component={Link} to="/project/warnitapp">Warnit App</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/project/warnit">Warnit</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/project/warnitapp">Warnit App</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/project/projectui">UI Agenda</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/project/formaculture">Formaculture</MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/project/conceptwb">Conception Weight and Balance</MenuItem>
           </Menu>
-          <Button color="inherit" component={Link} to="/parcour">Parcours</Button>
-          <Button color="inherit" component={Link} to="/contact">Contact</Button>
+          <Button color="inherit" component={Link} to="/parcour" style={{color: isScrolled ? 'black' : 'white'}}>Parcours</Button>
+          <Button color="inherit" component={Link} to="/contact" style={{color: isScrolled ? 'black' : 'white'}}>Contact</Button>
         </Toolbar>
       </AppBar>
-
+      <div style={{ height: appBarHeight }} />
       <Box mt={2}>
         <Routes>
           <Route path="/" element={<Navigate replace to="/portfolio" />} />
@@ -118,6 +153,8 @@ const App: React.FC = () => {
           <Route path="/skill/conceptuml" element={<Umlconceptskill />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/parcour" element={<Parcour />} />
+          <Route path="/competence" element={<Competences />} />
+          <Route path="/projet" element={<Projets />} />
         </Routes>
       </Box>
     </Router>
